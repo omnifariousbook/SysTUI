@@ -1,0 +1,226 @@
+#app-grid {
+    layout: grid;
+    grid-size: 2 2;
+    grid-rows: 40% 60%;
+    grid-columns: 60% 40%;
+}
+
+#top {
+    border: solid rgba(100,100,100,0.8);
+    border-title-align: center;
+    column-span: 2;
+    width: 100%;
+    height: 100%;
+    #cpu-pane {
+        align: center middle;
+        layout: horizontal;
+        #left-cpu {
+            overflow: auto auto;
+            scrollbar-size: 1 1;
+            scrollbar-background: 20%;
+            scrollbar-background-hover: 50%;
+            scrollbar-background-active: 80%;
+            scrollbar-color: 20%;
+            scrollbar-color-active: 80%; 
+            scrollbar-color-hover: 50%;
+            align: center middle;
+            border: double rgba(100,100,100,0.8);
+            height: 1fr;
+            width: 35%;
+            #overall-cpu{
+                content-align: center middle;
+                border: wide rgba(100,100,100,0.8);
+                border-title-align: right;
+                height: auto;
+                width: 100%;
+            } 
+            #all-cpu {
+                content-align: center middle;
+                height: auto;
+                width: 100%;
+                padding-right: 3;
+                padding-left: 3;
+            }
+        }
+        #cpu-graph {
+            height: 1fr;
+            width: 65%;
+            border: double rgba(100,100,100,0.8);
+            content-align: center middle;
+        }
+    }
+    #mem-pane {
+        align: center middle;
+        layout: horizontal;
+        #mem-tank {
+            content-align: center middle;
+            border: double $accent;
+            height: 1fr;
+            width: 20%;
+        }
+        #mem-graph {
+            content-align: center middle;
+            border: double $accent;
+            height: 1fr;
+            width: 30%;
+        }
+        #swap-graph {
+            content-align: center middle;
+            border: double $secondary;
+            height: 1fr;
+            width: 30%;
+        }
+        #swap-tank {
+            content-align: center middle;
+            border: double $secondary;
+            height: 1fr;
+            width: 20%;
+        }
+    }
+    #disk-pane {
+        align: center middle;
+        layout: horizontal;
+        #diskinfo-scroll {
+            border: double rgba(100,100,100,0.8);
+            height: 1fr;
+            width: 25%;
+            scrollbar-size: 1 1;
+            scrollbar-background: 20%;
+            scrollbar-background-hover: 50%;
+            scrollbar-background-active: 80%;
+            scrollbar-color: 20%;
+            scrollbar-color-active: 80%; 
+            scrollbar-color-hover: 50%;
+            #disk-info {
+                content-align: center middle;
+                height: auto;
+                width: 1fr;
+            }
+        }
+        
+        #disk-container {
+            border: double rgba(100,100,100,0.8);
+            height: 1fr;
+            width: 75%;
+            #read-disk-graph {
+                content-align: center middle;
+                height: 50%;
+                width: 1fr;
+            }
+            #write-disk-graph {
+                content-align: center middle;
+                height: 50%;
+                width: 1fr;
+            }
+        }
+    }
+    #net-pane {
+        align: center middle;
+        layout: horizontal;
+        #netinfo-scroll {
+            border: double rgba(100,100,100,0.8);
+            height: 1fr;
+            width: 30%;
+            scrollbar-size: 1 1;
+            scrollbar-background: 20%;
+            scrollbar-background-hover: 50%;
+            scrollbar-background-active: 80%;
+            scrollbar-color: 20%;
+            scrollbar-color-active: 80%; 
+            scrollbar-color-hover: 50%;
+            #net-info {
+                content-align: center middle;
+                height: auto;
+                width: 1fr;
+            }
+        }
+        #net-container {
+            border: double rgba(100,100,100,0.8);
+            height: 1fr;
+            width: 70%;
+            #send-net-graph {
+                content-align: center middle;
+                height: 50%;
+                width: 1fr;
+            }
+            #recv-net-graph {
+                content-align: center middle;
+                height: 50%;
+                width: 1fr;
+            }
+        }
+    }
+}
+
+#bottom-left {
+    height: 100%;
+    width: 100%;
+    border: solid rgba(100,100,100,0.8);
+    ProcessTable {
+        padding: 0 1;
+        DataTable {
+            background: transparent;
+            scrollbar-size: 1 1;
+            scrollbar-background: 20%;
+            scrollbar-background-hover: 50%;
+            scrollbar-background-active: 80%;
+            scrollbar-color: 20%;
+            scrollbar-color-active: 80%; 
+            scrollbar-color-hover: 50%;
+        }
+        DataTable > .datatable--cursor {
+            color: white;
+            opacity: 0%;
+        }
+        DataTable:focus > .datatable--cursor {
+            color: black;
+            opacity: 100%;
+        }
+    }
+}
+    
+#bottom-right {
+    height: 100%;
+    width: 100%;
+    border: solid rgba(100,100,100,0.8);
+    #sys-container {
+        overflow: auto auto;
+        height: 50%;
+        scrollbar-size: 1 1;
+        scrollbar-background: 20%;
+        scrollbar-background-hover: 50%;
+        scrollbar-background-active: 80%;
+        scrollbar-color: 20%;
+        scrollbar-color-active: 80%; 
+        scrollbar-color-hover: 50%;
+
+        #sys-info {
+            height: auto;
+            width: 1fr;
+            padding-top: 1;
+            padding-left: 1;
+        }
+    }
+    #log-container {
+        overflow: auto auto;
+        scrollbar-size: 1 1;
+        scrollbar-background: 20%;
+        scrollbar-background-hover: 50%;
+        scrollbar-background-active: 80%;
+        scrollbar-color: 20%;
+        scrollbar-color-active: 80%; 
+        scrollbar-color-hover: 50%;
+        height: 50%;
+        width: 1fr;
+        border: double rgba(100,100,100,0.8);
+        border-title-align: center;
+        #log-info {
+            height: auto;
+            width: 1fr;
+            padding-top: 1;
+            padding-left: 1;
+        }
+    }
+}
+
+
